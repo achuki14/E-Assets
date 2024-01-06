@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <title>E-Assets</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css">
+        <style>
+            body{
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                background-image: url('https://i.pinimg.com/originals/3a/31/86/3a3186902c15827da08580890c8f63fb.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%;
+            }
+            .button {
+                 padding: 10px 20px;
+                 background-color: rgb(16, 2, 25); 
+                 color: white;
+                 text-align: center;
+                 display: inline-block;
+                 font-size: 20px;
+                 border-radius: 40px 40px 40px 40px;
+                 width: 120px;
+                 height: 50px;
+                 transition-duration: 0.1s;
+                 cursor: pointer;
+                 position:absolute;
+                 top:0;
+                 right:0;
+                     }
+.button:hover {
+  background-color: rgb(98, 41, 120);
+  color: white;
+}
+            table, th {
+                border: 2px solid rgb(57, 57, 58);
+                background-color: rgb(31, 11, 49);
+                color: white;
+                border-collapse: collapse;
+}
+        </style>
+    </head>
+    <body>
+     <div class="container">
+        <form action="/newcreate" method="POST">
+        <button class="button" >Create</button>
+        </form>
+        <br/>
+        <br/>
+        <table id="example">
+        <h1 style="text-align:center;background-color: rgb(30, 8, 38);border: 5px solid rgb(114, 110, 110);color: white;"> Assets</h1>        
+            <thead style="text-align:center">
+                <tr>
+                    <th>Asset ID            </th>
+                    <th>Name               </th>
+                    <th>Asset Type          </th>
+                    <th>Description        </th>
+                    <th>Area               </th>
+                    <th>Year Of Construction </th>
+                    <th>Capacity           </th>
+                    <th>Number Of Rooms           </th>
+                    <th>Maintenance Required</th>
+                    <th>Possible    Action  </th>
+                </tr>
+            </thead>
+            <tbody style="text-align:center">
+                <% for(var i = 0; i < newassets.length; i++){ %>
+                    <tr>
+                        <td><%= newassets[i].AssetID %>             </td>
+                        <td><%= newassets[i].Name %>                </td>
+                        <td><%= newassets[i].AssetType %>           </td>
+                        <td><%= newassets[i].Description %>         </td>
+                        <td><%= newassets[i].Area  %>               </td>
+                        <td><%= newassets[i].YearOfConstruction %>  </td>
+                        <td><%= newassets[i].Capacity %>            </td>
+                        <td><%= newassets[i].NumRooms %>            </td>
+                        <td><%= newassets[i].MaintenanceRequired %> </td>
+                        <td><a class="btn btn-primary btn-xs" href="/edit/<%= newassets[i]._id %>"><i class="fa fa-edit "></i> </a>
+                            <a class="btn btn-danger btn-xs" href="/delete/<%= newassets[i]._id %>"><i class="fa fa-trash"></i> </a>
+                        </td>
+                        
+                        
+
+                    </tr>
+                    <%}%>
+            </tbody>
+                
+        </table>
+    </div>
+    <script src="/index.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#example').DataTable();
+      })
+    </script>
+  
+        
+    </body>
+</html>

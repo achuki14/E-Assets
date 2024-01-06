@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Asset</title>
+    <style>
+        input[type=text]
+        {
+            width:15%;
+            padding: 12px 20px;
+            margin: none;
+            box-sizing:content-box;
+            outline-style:none;
+            outline-width: medium;
+            background-color:rgb(183, 143, 167);
+        }
+        input[type=number]
+        {
+            width:15%;
+            padding: 12px 20px;
+            margin: none;
+            box-sizing:content-box;
+            outline-style:none;
+            outline-width: medium;
+            background-color: rgb(183, 143, 167);
+        }
+        input[type=submit]
+        {
+                 padding: 10px 20px;
+                 background-color: rgb(192, 160, 179); 
+                 color: rgb(6, 5, 5);
+                 text-align: center;
+                 display: inline-block;
+                 font-size: 15px;
+                 border-radius: 40px 40px 40px 40px;
+                 width: 120px;
+                 height: 40px;
+                 margin: none;
+                 transition-duration: 0.1s;
+                 cursor: pointer;
+        }
+        select{
+            width:15%;
+            padding: 12px 20px;
+            margin: none;
+            box-sizing: content-box;
+            outline-style:none;
+            outline-width: medium;
+            background-color: rgb(183, 143, 167);
+        }
+        body{
+            background-image: url('https://img.freepik.com/free-photo/background-beige-watercolor-with-pink-pastel-stains-simple-style_53876-108707.jpg?w=2000');
+            background-size:cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<!-- <body>
+    <div><h1 style="text-align: center;background-color: rgb(218, 196, 221);">Create New Asset</h1>
+        <div><form method="POST" action="/save" >
+            <label for="AssetId" style="font-size:20px;">AssetID:</label>
+            <input type="number" name="AssetID" placeholder="AssetID" required>
+            <div class="form-group"><label style="padding:0px 105px 0px 0px ;">Name:</label>
+            <input type="text" name ="Name" placeholder="Name"><br/></div>
+            <label style="padding:0px 76px 0px 0px ">AssetType:</label>
+            <input type="text" name ="AssetType" placeholder="AssetType"><br/>
+            <label style="padding:0px 72px 0px 0px ;">Description:</label>
+            <textarea name="Description" rows="3" cols="50" placeholder="Write Description" >
+            </textarea><br/>
+            <label style="padding:0px 110px 0px 0px ;">Area:</label>
+            <input type="number" name ="Area" placeholder="Area"><br/>
+            <label style="padding:0px 13px 0px 0px ;" >YearOfConstruction:</label>
+            <input type="number" name ="YearOfConstruction" placeholder="YearOfConstruction"><br/>
+            <label style="padding:0px 85px 0px 0px ;">Capacity:</label>
+            <input type="number" name ="Capacity" placeholder="Capacity"><br/>
+            <label style="padding:0px 70px 0px 0px ;">NumRoom:</label>
+            <input type="number" name ="NumRooms" placeholder="NumRoom"><br/>
+            <label>MaintenanceRequired:</label>
+            <input type="text" name ="MaintenanceRequired" placeholder="MaintenanceRequired"><br/>
+            <input type="submit" value="Create">
+        </form></div>
+        </div> -->
+        <body>
+            <center>
+                <pre>
+            <h1 style="text-align: center; font-size:130 ;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">         Create Asset</h1>
+            <form action="/save"  method="post" role="form" >
+                <label for="AssetId" style="font-size:20px;">ASSET ID</label>
+                <input type="number" name="AssetID" placeholder="Asset Id" required>
+        
+                <label for="name" style="font-size:20px;">NAME</label>
+                <input type="text" name="Name" placeholder="Name" required>
+        
+                <label for="Assettype" style="font-size:20px;">ASSET TYPE</label>
+                <input type="text" name="AssetType" placeholder="Asset type">
+        
+                <label for="dis" style="font-size:20px;">DESCRIPTION</label>
+                <input type="text" name="Description" placeholder="Describe" required>
+        
+                <label for="Area" style="font-size:20px;">AREA</label>
+                <input type="number" name="Area" placeholder="Area" required>
+        
+                <label for="YearOfConstruction" style="font-size:20px;">YEAR OF CONSTRUCTION</label>
+                <input type="number" name="YearOfConstruction" placeholder="YearOfConstruction" required>
+        
+                <label for="Capacity" style="font-size:20px;">CAPACITY</label>
+                <input type="number" name="Capacity" placeholder="Capacity" required>
+        
+                <label for="NumRooms" style="font-size:20px;">NUMBER OF ROOMS</label>
+                <input type="number" name="NumRooms" placeholder="Number of Rooms" required>
+        
+                <label for="savailable" style="font-size:20px;">MAINTENANCE REQUIRED</label>
+                <select name="MaintenanceRequired">
+                    <option value="Yes">YES</option>
+                    <option value="No">NO</option>
+                    
+                </select>
+
+
+               <input type="submit" value="Create" >
+               </form>
+                </pre>
+            </center>
+</body>
+</html>

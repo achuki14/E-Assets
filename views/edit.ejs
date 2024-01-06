@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Asset</title>
+    <style>
+        input[type=text]
+        {
+            width:15%;
+            padding: 12px 20px;
+            margin: none;
+            box-sizing:content-box;
+            outline-style:none;
+            outline-width: medium;
+            background-color:rgb(183, 143, 167);
+        }
+        input[type=number]
+        {
+            width:15%;
+            padding: 12px 20px;
+            margin: none;
+            box-sizing:content-box;
+            outline-style:none;
+            outline-width: medium;
+            background-color: rgb(183, 143, 167);
+        }
+        input[type=submit]
+        {
+                 padding: 10px 20px;
+                 background-color: rgb(192, 160, 179); 
+                 color: rgb(6, 5, 5);
+                 text-align: center;
+                 display: inline-block;
+                 font-size: 15px;
+                 border-radius: 40px 40px 40px 40px;
+                 width: 120px;
+                 height: 40px;
+                 margin: none;
+                 transition-duration: 0.1s;
+                 cursor: pointer;
+        }
+        select{
+            width:15%;
+            padding: 12px 20px;
+            margin: none;
+            box-sizing: content-box;
+            outline-style:none;
+            outline-width: medium;
+            background-color: rgb(183, 143, 167);
+        }
+        body{
+            background-image: url('https://img.freepik.com/free-photo/background-beige-watercolor-with-pink-pastel-stains-simple-style_53876-108707.jpg?w=2000');
+            background-size:cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+        <body>
+            <center>
+                <pre>
+            <h1 style="text-align: center; font-size:130 ;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><%=            title%></h1>
+            <form action="/update/"  method="post" role="form" >
+                <input type="hidden" name="id" value="<%= newassets._id %> ">
+                <label for="AssetId" style="font-size:20px;">ASSET ID</label>
+                <input type="number" name="AssetID" value="<%= newassets.AssetID %>" placeholder="Asset Id" required>
+        
+                <label for="name" style="font-size:20px;">NAME</label>
+                <input type="text" name="Name" value="<%= newassets.Name %>" placeholder="Name" required>
+        
+                <label for="Assettype" style="font-size:20px;">ASSET TYPE</label>
+                <input type="text" name="AssetType" value="<%= newassets.AssetType %>" placeholder="Asset type">
+        
+                <label for="dis" style="font-size:20px;">DESCRIPTION</label>
+                <input type="text" name="Description" value="<%= newassets.Description %>"  placeholder="Describe" required>
+        
+                <label for="Area" style="font-size:20px;">AREA</label>
+                <input type="number" name="Area" value="<%= newassets.Area %>" placeholder="Area" required>
+        
+                <label for="YearOfConstruction" style="font-size:20px;">YEAR OF CONSTRUCTION</label>
+                <input type="number" name="YearOfConstruction" value="<%= newassets.YearOfConstruction %>" placeholder="YearOfConstruction" required>
+        
+                <label for="Capacity" style="font-size:20px;">CAPACITY</label>
+                <input type="number" name="Capacity" value="<%= newassets.Capacity %>" placeholder="Capacity" required>
+        
+                <label for="NumRooms" style="font-size:20px;">NUMBER OF ROOMS</label>
+                <input type="number" name="NumRooms" value="<%= newassets.NumRooms %>" placeholder="Number of Rooms" required>
+        
+                <label for="savailable" style="font-size:20px;">MAINTENANCE REQUIRED</label>
+                <select name="MaintenanceRequired">
+                    <option value="Yes"<% if(newassets.MaintenanceRequired=="Yes"){%> selected <%} %> >YES</option>
+                    <option value="No"<% if(newassets.MaintenanceRequired=="No"){%> selected <%} %>>NO</option>
+                    
+                </select>
+
+
+               <input type="submit" value="Edit" >
+               </form>
+                </pre>
+            </center>
+</body>
+</html>
